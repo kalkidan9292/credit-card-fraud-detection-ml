@@ -1,93 +1,69 @@
-Model Performance Report — Credit Card Fraud Detection
-———————————————————————————
-1. Dataset Overview
-———————————————————————————
+# Model Performance Report — Credit Card Fraud Detection
 
-The dataset contains 284,807 transactions and 31 features.
-Only 492 rows represent fraudulent activity (0.17%), resulting in a highly imbalanced classification problem.
+## 1. Dataset Overview
+The dataset contains 284,807 transactions and 31 features.  
+Only 492 records are labeled as fraud (0.17%).
 
-Referenced files:
-credit-card-fraud-detection-ml/Report/01_dataset_head_and_info.png
-credit-card-fraud-detection-ml/Report/02_imports_and_dataset_preview.png
-credit-card-fraud-detection-ml/Report/03_dataset_info_overview.png
+Assets:
+Report/01_dataset_head_and_info.png  
+Report/02_imports_and_dataset_preview.png  
+Report/03_dataset_info_overview.png  
 
-———————————————————————————
-2. Data Quality Assessment
-———————————————————————————
 
-A complete missing-value check showed 0 missing entries across all features.
-No cleaning, dropping, or imputation was required.
+## 2. Data Quality Check
+A full scan confirmed that the dataset has no missing values.
 
-Referenced file:
-credit-card-fraud-detection-ml/Report/04_missing_values_check.png
+Asset:
+Report/04_missing_values_check.png  
 
-———————————————————————————
-3. Class Imbalance Analysis
-———————————————————————————
 
-The dataset is dominated by legitimate transactions.
-Fraud cases occur in less than 0.2% of all rows — a scale that can severely distort training if not corrected.
+## 3. Class Imbalance Analysis
+The dataset is highly imbalanced, with the majority of transactions being non-fraudulent.
 
-Referenced file:
-credit-card-fraud-detection-ml/Report/05_class_imbalance_analysis.png
+Asset:
+Report/05_class_imbalance_analysis.png  
 
-———————————————————————————
-4. Handling Imbalance — Under-Sampling
-———————————————————————————
 
-To build a balanced training environment, legitimate transactions were under-sampled to match the number of fraud cases (492).
-The resulting dataset contains 984 rows — equal parts legit and fraud.
+## 4. Under-Sampling Process
+The legitimate class was under-sampled to match the fraud class (492 vs 492).  
+This created a balanced dataset of 984 rows.
 
-This section includes:
-• Legit vs. Fraud amount statistics
-• Class-wise mean comparison
-• Undersampling procedure
-• Final balanced dataset preview
+Assets:
+Report/06_amount_statistics_legit_vs_fraud.png  
+Report/07_classwise_mean_and_undersampling_process.png  
+Report/08_balanced_dataset_overview_and_feature_target_split.png  
 
-Referenced files:
-credit-card-fraud-detection-ml/Report/06_amount_statistics_legit_vs_fraud.png
-credit-card-fraud-detection-ml/Report/07_classwise_mean_and_undersampling_process.png
-credit-card-fraud-detection-ml/Report/08_balanced_dataset_overview_and_feature_target_split.png
 
-———————————————————————————
-5. Feature Matrix & Target Vector
-———————————————————————————
+## 5. Feature and Target Preparation
+Thirty numerical features were used as input (X).  
+The "Class" column served as the output label (Y).
 
-The balanced dataset was divided into:
-• X → 30 numerical features
-• Y → Class label (0 = legit, 1 = fraud)
+Asset:
+Report/09_feature_matrix_and_target_vector_preview.png  
 
-Referenced file:
-credit-card-fraud-detection-ml/Report/09_feature_matrix_and_target_vector_preview.png
 
-———————————————————————————
-6. Train-Test Split & Model Training
-———————————————————————————
+## 6. Model Training
+Training setup:
+- StandardScaler for feature normalization  
+- Train/Test split = 80/20 (stratified)  
+- Logistic Regression (max_iter=2000)
 
-Data was split using an 80/20 ratio, with stratified sampling to maintain balance.
-A StandardScaler was applied to improve model convergence.
-A Logistic Regression model (max_iter=2000, solver='liblinear') was used.
+Asset:
+Report/10_train_test_split_and_model_training.png  
 
-Referenced file:
-credit-card-fraud-detection-ml/Report/10_train_test_split_and_model_training.png
 
-———————————————————————————
-7. Model Evaluation
-———————————————————————————
+## 7. Model Evaluation
+Training Accuracy: 0.9555  
+Testing Accuracy: 0.9289  
 
-Training Accuracy: ~0.955
-Testing Accuracy: ~0.928
+Includes confusion matrix and classification report.
 
-Confusion matrix and classification report show consistent performance across both classes, indicating balanced learning after under-sampling.
+Asset:
+Report/11_model_evaluation_confusion_matrix_classification_report.png  
 
-Referenced file:
-credit-card-fraud-detection-ml/Report/11_model_evaluation_confusion_matrix_classification_report.png
 
-———————————————————————————
-8. Final Test Accuracy
-———————————————————————————
+## 8. Final Test Accuracy
+Final accuracy on unseen data: 0.9289
 
-The final test accuracy was recorded as 0.9289, confirming that the model generalizes well on unseen data.
-
-Referenced file:
-credit-card-fraud-detection-ml/Report/12_test_accuracy_score.png
+Asset:
+Report/12_test_accuracy_score.png  
