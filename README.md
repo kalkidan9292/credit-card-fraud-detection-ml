@@ -31,18 +31,31 @@ The focus of this project is not just building a model, but **handling extreme c
 credit-card-fraud-detection-ml/
 │
 ├── data/
-│   └── creditcard.csv   (LFS)
+│   ├── creditcard.csv              # Original dataset (tracked with Git LFS)
+│   └── README.md                   # Dataset description + download instructions
 │
 ├── notebooks/
-│   └── Credit_Card_Fraud_Detection.ipynb
+│   ├── credit_card_fraud_detection.ipynb   # Full EDA + modeling walkthrough
+│   └── credit_card_fraud_detection.py      # Script version of the workflow
 │
 ├── Report/
-│   └── model_performance.md
+│   ├── model_performance.md        # Final evaluation report
+│   │
+│   ├── 01_dataset_head_and_info.png
+│   ├── 02_imports_and_dataset_preview.png
+│   ├── 03_dataset_info_overview.png
+│   ├── 04_missing_values_check.png
+│   ├── 05_class_imbalance_analysis.png
+│   ├── 06_amount_statistics_legit_vs_fraud.png
+│   ├── 07_classwise_mean_and_undersampling_process.png
+│   ├── 08_balanced_dataset_overview_and_feature_target_split.png
+│   ├── 09_feature_matrix_and_target_vector_preview.png
+│   ├── 10_train_test_split_and_model_training.png
+│   ├── 11_model_evaluation_confusion_matrix_classification_report.png
+│   └── 12_test_accuracy_score.png
 │
-├── src/   (optional, if you add modular code later)
 │
-├── images/
-│
-├── .gitattributes
-├── .gitignore
-├── README.md
+├── .gitattributes                  # Git LFS tracking for large files
+├── .gitignore                      # Ignored files
+├── requirements.txt                # Project dependencies
+└── README.md                       # Main project documentation
