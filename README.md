@@ -28,21 +28,21 @@ The focus of this project is not just building a model, but **handling extreme c
 ## 🗂 Project Structure
 
 ```text
-.
+credit-card-fraud-detection-ml/
+│
 ├── data/
-│   └── README.md              # instructions on how to download the dataset
+│   └── creditcard.csv   (LFS)
+│
 ├── notebooks/
-│   └── 01_fraud_detection_eda_model.ipynb
-├── src/
-│   ├── data_preprocessing.py
-│   ├── model_training.py
-│   └── evaluation.py
-├── reports/
+│   └── Credit_Card_Fraud_Detection.ipynb
+│
+├── Report/
 │   └── model_performance.md
+│
+├── src/   (optional, if you add modular code later)
+│
 ├── images/
-│   ├── class_distribution.png
-│   ├── confusion_matrix.png
-│   └── roc_curve.png
-├── requirements.txt
+│
+├── .gitattributes
 ├── .gitignore
-└── README.md
+├── README.md
